@@ -8,6 +8,7 @@ Returns data in json.
 import json
 import requests
 from error import PillowError
+import util
 
 BASE_URL = "http://www.zillow.com/webservice"
 ZWS_ID = "X1-ZWz1dyb53fdhjf_6jziz"
@@ -24,8 +25,12 @@ def search_by_address(address, citystatezip, rentzestimate=False):
     else:
         raise PillowError({'message': 'address and citystatezip are required.'})
     response = requests.get(url, params=parameters)
-    print response
-    # response_json = response.json()
-    # print json.dumps(response_json, indent=4)
+    json_data = util.xmlstr_to_dict(response.content)
+    return json_data
 
-search_by_address("2114 Bigelow Ave", "Seattle, WA")
+
+json_data = search_by_address("2114 Bigelow Ave", "Seattle, WA")
+print json.dumps(json_data, indent=2)
+
+json_data = search_by_address("Bigelow Ave", "Seattle, WA")
+print json.dumps(json_data, indent=2) # code 508, no exact match found
