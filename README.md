@@ -2,4 +2,9 @@
 
 Find your dream home
 
-Flask backend + React frontend, deployed on Heroku.
+Flask backend, deployed on Heroku.
+
+### TODO:
+ - more unit tests
+ - logging
+ - react frontend

@@ -11,8 +11,8 @@ def index():
 
 @app.route('/searchHome', methods=['GET', 'POST'])
 def search_home():
-    address = request.form['address'] # 2114 Bigelow Ave
-    citystatezip = request.form['citystatezip'] # Seattle, WA
+    address = request.form['address']
+    citystatezip = request.form['citystatezip']
     results = api.search_by_address(address, citystatezip)
     return render_template('results.html', results=results, count=len(results))
 

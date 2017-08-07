@@ -27,6 +27,8 @@ def search_by_address(address, citystatezip, rentzestimate=False):
     response = requests.get(url, params=parameters)
     response = xmltodict.parse(response.content)
     results = response['SearchResults:searchresults']['response']['results']['result']
+    if 'address' in results:
+        results = [results]
     return results
 
 
