@@ -1,5 +1,5 @@
 import unittest
-from pillow.app import app
+from app import app
 
 class AppTest(unittest.TestCase):
     def setUp(self):
