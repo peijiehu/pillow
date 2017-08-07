@@ -16,8 +16,12 @@
                 Last updated {{ result['zestimate']['last-updated'] }}
             </div>
             <div>Value Change
-                Last {{ result['zestimate']['valueChange']['@duration'] }} days
-                Up by ${{ result['zestimate']['valueChange']['#text'] }}
+                by ${{ result['zestimate']['valueChange']['#text'] }}
+                last {{ result['zestimate']['valueChange']['@duration'] }} days
+            </div>
+            <div>Valuation Range:
+                low ${{ result['zestimate']['valuationRange']['low']['#text'] }},
+                high ${{ result['zestimate']['valuationRange']['high']['#text'] }}
             </div>
 
             <div>Neighborhood:

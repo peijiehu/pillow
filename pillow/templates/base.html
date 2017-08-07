@@ -16,16 +16,9 @@
 
         <form role="search" method="post" action="{{ url_for('search_home') }}" class="search-form">
             <div>
-                <label for="address">Search</label>
-                <input name="address" maxlength="150" placeholder="Enter an address" style="padding: 17px 120px 19px 20px;
-    font-size: 18px;
-    height: 20px;
-    width: 210px;">
-                <input name="citystatezip" maxlength="150" placeholder="Enter city, state or ZIP code" style="padding: 17px 120px 19px 20px;
-    font-size: 18px;
-    height: 20px;
-    width: 210px;">
-                <button type="submit" style="border-radius: 5px; height: 44px; width: 102px; color: #fff; background: #0074e4;">Search</button>
+                <input name="address" maxlength="150" placeholder="Enter an address">
+                <input name="citystatezip" maxlength="150" placeholder="Enter city, state or ZIP">
+                <button type="submit">Search</button>
             </div>
         </form>
 
@@ -34,6 +27,6 @@
       </div>
     </div>
     <!-- scripts -->
-    <script src="{{ url_for('static', filename='scripts/js/main.js') }}"></script>
+    <!--<script src="{{ url_for('static', filename='scripts/js/main.js') }}"></script>-->
   </body>
 </html>
