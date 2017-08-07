@@ -13,8 +13,8 @@ def index():
 def search_home():
     address = request.form['address'] # 2114 Bigelow Ave
     citystatezip = request.form['citystatezip'] # Seattle, WA
-    json_data = api.search_by_address(address, citystatezip)
-    return render_template('home.html', result=json_data)
+    results = api.search_by_address(address, citystatezip)
+    return render_template('results.html', results=results, count=len(results))
 
 
 if __name__ == '__main__':

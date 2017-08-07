@@ -7,8 +7,8 @@ Returns data in json.
 
 import json
 import requests
+import xmltodict
 from error import PillowError
-import util
 
 BASE_URL = "http://www.zillow.com/webservice"
 ZWS_ID = "X1-ZWz1dyb53fdhjf_6jziz"
@@ -25,8 +25,9 @@ def search_by_address(address, citystatezip, rentzestimate=False):
     else:
         raise PillowError({'message': 'address and citystatezip are required.'})
     response = requests.get(url, params=parameters)
-    json_data = util.xmlstr_to_dict(response.content)
-    return json_data
+    response = xmltodict.parse(response.content)
+    results = response['SearchResults:searchresults']['response']['results']['result']
+    return results
 
 
 if __name__ == 'main':

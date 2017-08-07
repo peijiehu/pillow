@@ -9,22 +9,27 @@
   </head>
   <body>
     <div class="container">
-      <h1>Home Details</h1>
-      <br>
+
+      <h2>Pillow - Find your dream home.</h2>
+
       <div id="main">
 
         <form role="search" method="post" action="{{ url_for('search_home') }}" class="search-form">
             <div>
                 <label for="address">Search</label>
-                <input name="address" maxlength="150" placeholder="Enter an address">
-                <input name="citystatezip" maxlength="150" placeholder="Enter city, state or ZIP code">
-                <button type="submit">Search</button>
+                <input name="address" maxlength="150" placeholder="Enter an address" style="padding: 17px 120px 19px 20px;
+    font-size: 18px;
+    height: 20px;
+    width: 210px;">
+                <input name="citystatezip" maxlength="150" placeholder="Enter city, state or ZIP code" style="padding: 17px 120px 19px 20px;
+    font-size: 18px;
+    height: 20px;
+    width: 210px;">
+                <button type="submit" style="border-radius: 5px; height: 44px; width: 102px; color: #fff; background: #0074e4;">Search</button>
             </div>
         </form>
 
-        {% if result %}
-        <div>{{ result }}</div>
-        {% endif %}
+        {% block content %}{% endblock %}
 
       </div>
     </div>
