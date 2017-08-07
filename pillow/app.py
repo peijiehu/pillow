@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request
 
+import api
+
 app = Flask(__name__)
 
 
@@ -9,9 +11,10 @@ def index():
 
 @app.route('/searchHome', methods=['GET', 'POST'])
 def search_home():
-    print request.form['address'] # 2114 Bigelow Ave
-    print request.form['citystatezip'] # Seattle, WA
-    return render_template('home.html')
+    address = request.form['address'] # 2114 Bigelow Ave
+    citystatezip = request.form['citystatezip'] # Seattle, WA
+    json_data = api.search_by_address(address, citystatezip)
+    return render_template('home.html', result=json_data)
 
 
 if __name__ == '__main__':
