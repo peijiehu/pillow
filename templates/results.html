@@ -7,10 +7,10 @@
     <div id='results'>
     {% if count > 0 %}
     {% for result in results %}
-        <div id='oneresult' style="margin: 40px 40px;">
+        <div class='oneresult' style="margin: 40px 40px;">
             <div>{{ result['address']['street'] }}, {{ result['address']['city'] }}, {{ result['address']['state'] }} {{ result['address']['zipcode'] }}</div>
             <a href='{{ result['links']['homedetails'] }}' target='_blank'>View Details</a>
-            <div>Home Value</div>
+            <div style="font-weight:600;">Home Value</div>
             <div>Zestimate
                 ${{ result['zestimate']['amount']['#text'] }}
                 Last updated {{ result['zestimate']['last-updated'] }}
@@ -24,9 +24,8 @@
                 high ${{ result['zestimate']['valuationRange']['high']['#text'] }}
             </div>
 
-            <div>Neighborhood:
-                <a href='{{ result['localRealEstate']['region']['links']['overview'] }}' target='_blank'>{{ result['localRealEstate']['region']['@name'] }}</a>
-            </div>
+            <div style="font-weight: 600;">Neighborhood</div>
+            <a href='{{ result['localRealEstate']['region']['links']['overview'] }}' target='_blank'>{{ result['localRealEstate']['region']['@name'] }}</a>
             <div>Median Zestimate ${{ result['localRealEstate']['region']['zindexValue'] }}</div>
         </div>
     {% endfor %}
