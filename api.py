@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Interface to query Zillow APIs to get information about homes.
-Returns data in json.
+Returns data in json(list of dictionaries).
 """
 
 import json

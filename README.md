@@ -21,6 +21,8 @@ To run in production
     gunicorn app:app
 
 ### TODO:
- - more unit tests
- - logging
- - react frontend
+1. More unit tests to cover corner cases and negative tests
+2. Add quick search links below search bar for recent and frequent searched addresses
+3. Logging to a cloud service
+4. Integrate with a Continuous Integration tool for testing and building new versions
+5. Better frontend - use a framework like React
