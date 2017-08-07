@@ -29,8 +29,9 @@ def search_by_address(address, citystatezip, rentzestimate=False):
     return json_data
 
 
-json_data = search_by_address("2114 Bigelow Ave", "Seattle, WA")
-print json.dumps(json_data, indent=2)
+if __name__ == 'main':
+    json_data = search_by_address("2114 Bigelow Ave", "Seattle, WA")
+    print json.dumps(json_data, indent=2)
 
-json_data = search_by_address("Bigelow Ave", "Seattle, WA")
-print json.dumps(json_data, indent=2) # code 508, no exact match found
+    json_data = search_by_address("Bigelow Ave", "Seattle, WA")
+    print json.dumps(json_data, indent=2) # code 508, no exact match found
