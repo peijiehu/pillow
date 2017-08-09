@@ -18,8 +18,8 @@
 
         <form role="search" method="post" action="{{ url_for('search_home') }}" class="search-form">
             <div>
-                <input name="address" maxlength="150" placeholder="Enter an address">
-                <input name="citystatezip" maxlength="150" placeholder="Enter city, state or ZIP">
+                <input name="address" maxlength="150" placeholder="Enter an address" required>
+                <input name="citystatezip" maxlength="150" placeholder="Enter city, state or ZIP" required>
                 <button type="submit">Search</button>
             </div>
         </form>
